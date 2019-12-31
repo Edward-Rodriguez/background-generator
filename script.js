@@ -20,17 +20,14 @@ function setGradient() {
   setGradientColors(color1.value, color2.value, deg);
 }
 
-// returns random number b/w 0 & 255 inclusive
+// returns random hex string
 function getRandomHexColor() {
   return (
     '#' +
-    (
-      '000000' +
-      Math.random()
-        .toString(16)
-        .slice(2, 8)
-        .toUpperCase()
-    ).slice(-6)
+    (Math.random().toString(16) + '000000')
+      .slice(2, 8)
+      .toUpperCase()
+      .slice(-6)
   );
 }
 
