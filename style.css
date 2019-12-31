@@ -32,3 +32,16 @@ h3 {
   text-transform: none;
   letter-spacing: 0.01em;
 }
+
+#randomButton {
+  background-color: #e7e7e7; /* Green */
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px;
+  cursor: pointer;
+}

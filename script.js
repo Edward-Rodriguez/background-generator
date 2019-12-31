@@ -3,11 +3,11 @@ var color1 = document.querySelector('.color1');
 var color2 = document.querySelector('.color2');
 var body = document.getElementById('gradient');
 var degree = document.querySelector('select[name=degrees]');
+var randomButton = document.querySelector('#randomButton');
 var defaultColor1 = '#0000ff';
 var defaultColor2 = '#ff0000';
 var defaultDegree = '90';
-
-console.log(degree);
+const maxRGBValue = '255';
 
 function setGradientColors(firstColor, secondColor, deg) {
   body.style.background =
@@ -20,6 +20,26 @@ function setGradient() {
   setGradientColors(color1.value, color2.value, deg);
 }
 
+// returns random number b/w 0 & 255 inclusive
+function getRandomHexColor() {
+  return (
+    '#' +
+    (
+      '000000' +
+      Math.random()
+        .toString(16)
+        .slice(2, 8)
+        .toUpperCase()
+    ).slice(-6)
+  );
+}
+
+function generateRandomColors() {
+  color1.value = getRandomHexColor();
+  color2.value = getRandomHexColor();
+  setGradient();
+}
+
 function startup() {
   setGradientColors(defaultColor1, defaultColor2, defaultDegree);
   color1.value = defaultColor1;
@@ -27,6 +47,7 @@ function startup() {
   color1.addEventListener('input', setGradient);
   color2.addEventListener('input', setGradient);
   degree.addEventListener('change', setGradient);
+  randomButton.addEventListener('click', generateRandomColors);
 }
 
 startup();
