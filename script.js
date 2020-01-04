@@ -39,10 +39,6 @@ function generateRandomColors() {
   setGradient();
 }
 
-function textTransition() {
-  copiedText.style.cssText = 'visibility: visible; opacity: 1; ';
-}
-
 function resetTransition() {
   if (copiedText.style.visibility === 'visible') {
     copiedText.style.cssText =
@@ -51,10 +47,14 @@ function resetTransition() {
 }
 
 function copyToClipboard() {
-  css.textContent.select();
-  css.textContent.setSelectionRange(0, 99999); /*For mobile devices*/
+  var temp = document.createElement('textarea');
+  document.body.appendChild(temp);
+  temp.value = css.textContent;
+  temp.select();
+  temp.setSelectionRange(0, 99999); /*For mobile devices*/
   document.execCommand('copy');
-  alert(css.textContent);
+  document.body.removeChild(temp);
+  copiedText.style.cssText = 'visibility: visible; opacity: 1; ';
 }
 
 function startup() {
@@ -65,10 +65,7 @@ function startup() {
   color2.addEventListener('input', setGradient);
   degree.addEventListener('change', setGradient);
   randomButton.addEventListener('click', generateRandomColors);
-  copyButton.addEventListener('click', () => {
-    textTransition;
-    copyToClipboard;
-  });
+  copyButton.addEventListener('click', copyToClipboard);
   copyButton.addEventListener('mouseleave', resetTransition);
 }
 
