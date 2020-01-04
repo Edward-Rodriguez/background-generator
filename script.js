@@ -1,3 +1,13 @@
+/**
+ * Gradient background generator.
+ *
+ * Choose two colors and degree for a gradient
+ *
+ * @link  https://edward-rodriguez.github.io/background-generator/
+ * @author Edward Rodriguez
+ * @since 1/4/20
+ * */
+
 var css = document.querySelector('h3');
 var color1 = document.querySelector('.color1');
 var color2 = document.querySelector('.color2');
@@ -11,6 +21,7 @@ var defaultColor2 = '#ff0000';
 var defaultDegree = '90';
 const maxRGBValue = '255';
 
+// set gradient background with given colors and degree
 function setGradientColors(firstColor, secondColor, deg) {
   body.style.background =
     'linear-gradient(' + deg + 'deg,' + firstColor + ', ' + secondColor + ')';
@@ -39,6 +50,7 @@ function generateRandomColors() {
   setGradient();
 }
 
+// reset COPIED text to invisible
 function resetTransition() {
   if (copiedText.style.visibility === 'visible') {
     copiedText.style.cssText =
