@@ -1,7 +1,8 @@
 /**
  * Gradient background generator.
  *
- * Choose two colors and degree for a gradient
+ * Choose two colors and a degree for a background gradient and
+ * generate corresponding css with copy option
  *
  * @link  https://edward-rodriguez.github.io/background-generator/
  * @author Edward Rodriguez
