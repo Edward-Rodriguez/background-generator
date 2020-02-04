@@ -1,7 +1,7 @@
 {
   "name": "background-generator",
   "version": "1.0.0",
-  "description": "Languages, Frameworks: HTML, CSS, Javacript",
+  "description": "Languages, Frameworks: HTML, CSS, Javascript",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Edward-Rodriguez/background-generator/issues"
   },
-  "homepage": "https://github.com/Edward-Rodriguez/background-generator#readme"
+  "homepage": "https://github.com/Edward-Rodriguez/background-generator#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
 }
